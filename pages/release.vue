@@ -5,7 +5,7 @@
       公開ページ
     </div>
 
-    <nuxt-link to="/create" class="block button is-rounded is-fullwidth">戻る</nuxt-link>
+    <nuxt-link to="/" class="block button is-rounded is-fullwidth">戻る</nuxt-link>
 
 
     <div class="block content">
@@ -52,12 +52,13 @@
     <div class="block">
       <button :disabled="title.length < 5 || disabled" class="button is-rounded is-fullwidth" @click="release">公開</button>
     </div>
-    <nuxt-link :disabled="id == ''" :to="'/books/' + id" class="button block is-rounded is-fullwidth">早速やってみる</nuxt-link>
+    <a :disabled="id == ''" :href="'https://ankipan2.vercel.app/books/' + id"
+      class="button block is-rounded is-fullwidth">早速やってみる</a>
   </div>
 </template>
 
 <script>
-import { add_book } from '../../firebase'
+import { add_book } from '../firebase'
 
 export default {
   data() {
@@ -103,7 +104,7 @@ export default {
   created() {
 
     if (JSON.parse(localStorage.getItem('create')) == null) {
-      this.$router.push('/create')
+      this.$router.push('/')
     } else {
       this.data = JSON.parse(localStorage.getItem('create'));
     }
