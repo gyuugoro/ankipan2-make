@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="block">
+      <div class="is-size-1 logo">Ankipan2</div>
+    </div>
     <div class="block is-size-3">
       単語帳制作ページ
     </div>
@@ -157,6 +160,10 @@ export default {
 </script>
 
 <style scoped>
+.logo {
+  font-family: 'Russo One', sans-serif;
+}
+
 .list-move,
 /* 移動する要素にトランジションを適用 */
 .list-enter-active,
