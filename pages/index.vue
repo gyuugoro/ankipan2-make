@@ -99,23 +99,26 @@ export default {
         }
       }
 
+      this.offline()
     },
     addNew(num) {
 
       this.data.splice(num, 0, { question: "", answer: "", id: Date.now() })
-      this.offline()
 
       this.supermode = true
 
       this.focus = num
       this.edit = true
+
+      this.offline()
     },
     remove() {
       this.data.splice(this.focus, 1)
-      this.offline()
 
       this.edit = false
       this.focus = null
+
+      this.offline()
     },
     goUp() {
 
@@ -124,11 +127,11 @@ export default {
       this.data[this.focus - 1] = this.data[this.focus]
       this.data[this.focus] = d
 
-      this.offline()
-
       this.focus -= 1
 
       scrollBy(0, -64);
+
+      this.offline()
     },
     goDown() {
       const d = this.data[this.focus + 1]
@@ -136,11 +139,11 @@ export default {
       this.data[this.focus + 1] = this.data[this.focus]
       this.data[this.focus] = d
 
-      this.offline()
-
       this.focus += 1
 
       scrollBy(0, 64);
+
+      this.offline()
     },
     editEnd() {
       this.edit = false
