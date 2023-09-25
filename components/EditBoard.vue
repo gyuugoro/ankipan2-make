@@ -63,16 +63,13 @@ export default {
     },
     keyCheckAnswer(e) {
       if (e.keyCode == 13) {
-        this.$emit("save", [this.ques_input, this.ans_input])
-        this.$emit("editEnd")
+        this.save()
       }
     },
     remove() {
       this.ques_input = ""
       this.ans_input = ""
-      this.$emit("editEnd")
-　　　　this.$emit("save", [this.ques_input, this.ans_input])
-
+      this.save()
     }
   },
   mounted() {
