@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="block">
-      <div class="is-size-1 logo">Ankipan2</div>
+      <div class="is-size-1"><span class="logo">Ankipan2</span>beta</div>
     </div>
     <div class="block is-size-3">
       単語帳制作ページ
