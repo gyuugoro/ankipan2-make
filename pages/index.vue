@@ -16,8 +16,7 @@
 
           <transition name="inlist">
 
-            <edit-board v-if="focus == i && edit" :num="i" :question="v.question" :answer="v.answer" @save="save"
-              @editEnd="editEnd" />
+            <edit-board v-if="focus == i && edit" :num="i" :question="v.question" :answer="v.answer" @save="save" />
 
             <focus-board v-else-if="focus == i" :num="i" :question="v.question" :answer="v.answer" :maxNum="data.length"
               @notFocus="notFocus" @editOn="editOn" @addUp="addNew(i)" @addDown="addNew(i + 1)" @goUp="goUp"
@@ -86,6 +85,8 @@ export default {
     },
     save([v_ques, v_ans]) {
 
+      this.edit = false
+
       if (v_ques == "" && v_ans == "") {
         this.remove()
       } else {
@@ -144,9 +145,6 @@ export default {
       scrollBy(0, 64);
 
       this.offline()
-    },
-    editEnd() {
-      this.edit = false
     },
     offline() {
       localStorage.setItem("create", JSON.stringify(this.data))

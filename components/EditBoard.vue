@@ -54,7 +54,6 @@ export default {
   methods: {
     save() {
       this.$emit("save", [this.ques_input, this.ans_input])
-      this.$emit("editEnd")
     },
     keyCheckQuestion(e) {
       if (e.keyCode == 13) {
