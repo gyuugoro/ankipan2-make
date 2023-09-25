@@ -78,9 +78,6 @@ export default {
   mounted() {
     this.$refs.question.focus()
   },
-  beforeDestroy() {
-    this.$emit("save", [this.ques_input, this.ans_input])
-  },
 }
 </script>
 
