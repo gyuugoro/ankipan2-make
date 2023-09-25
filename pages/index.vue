@@ -16,7 +16,7 @@
 
           <transition name="inlist">
 
-            <edit-board v-if="focus == i && edit" :num="i" :question="v.question" :answer="v.answer" @save="save"
+            <edit-board v-if="edit" :num="i" :question="v.question" :answer="v.answer" @save="save"
               @editEnd="editEnd" />
 
             <focus-board v-else-if="focus == i" :num="i" :question="v.question" :answer="v.answer" :maxNum="data.length"
@@ -93,7 +93,7 @@ export default {
         this.data[this.focus].answer = v_ans
 
         if (this.supermode) {
-          this.addNew(this.focus + 1, true)
+          this.addNew(this.focus + 1)
         } else {
           this.focus = null
         }
