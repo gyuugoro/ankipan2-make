@@ -54,6 +54,7 @@ export default {
   methods: {
     save() {
       this.$emit("editEnd")
+      this.$emit("save", [this.ques_input, this.ans_input])
     },
     keyCheckQuestion(e) {
       if (e.keyCode == 13) {
@@ -63,12 +64,14 @@ export default {
     keyCheckAnswer(e) {
       if (e.keyCode == 13) {
         this.$emit("editEnd")
+        this.$emit("save", [this.ques_input, this.ans_input])
       }
     },
     remove() {
       this.ques_input = ""
       this.ans_input = ""
       this.$emit("editEnd")
+      this.$emit("save", [this.ques_input, this.ans_input])
     }
   },
   mounted() {
