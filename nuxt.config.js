@@ -1,16 +1,20 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  // target: 'static',
+  // ssr: false,
   ssr: false,
+
+  target: "static",
+
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ankipan2-make',
+    title: 'Ankipan2-make',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '単語帳アプリ' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -19,7 +23,6 @@ export default {
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossorigin: "" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Russo+One&display=swap" },
-
     ]
   },
 
@@ -55,6 +58,9 @@ export default {
     },
     meta: {
       ogHost: "https://ankipan2-make.vercel.app/",
+      ogImage: {
+        path: "https://ankipan2-make.vercel.app/icon.png"
+      },
       twitterCard: "summary",
       twitterSite: "@sho1216_",
       mobileAppIOS: true
@@ -74,4 +80,5 @@ export default {
     fb_app_id: process.env.FB_APP_ID,
     fb_measurement_id: process.env.FB_MEASUREMENT_ID
   }
+
 }
